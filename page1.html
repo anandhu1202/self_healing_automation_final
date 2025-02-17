@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1 - Self-Healing Automation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        button, input[type="submit"] {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .primary {
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+        .next {
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        #storedData {
+            margin-top: 15px;
+            font-style: italic;
+            color: #333;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>Page 1 - Self-Healing Automation Test</h1>
+            <p>
+                This is Page 1. Fill out the form below and click <strong>Submit Form</strong> to store your data.
+                Then use the buttons to test self-healing automation.
+            </p>
+        </div>
+        
+        <!-- Form Section -->
+        <div class="form-container">
+            <form id="userDataForm" class="data-entry-form" onsubmit="storeFormData(event)">
+                <div class="form-group" id="name-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name12" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group" id="email-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email12345" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group" id="message-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message12" name="message" class="form-input" rows="4" required></textarea>
+                </div>
+                <div class="form-group" id="submit-group">
+                    <input type="submit" value="Submit Form" id="form-submit-btn-1" class="primary">
+                </div>
+                
+            </form>
+        </div>
+        <div id="storedData" class="data-display"></div>
+
+        <!-- Buttons Container -->
+        <div class="button-container" id="action-buttons">
+            <button id="submit-btn-1" class="btn primary" data-testid="submit-button">Submit</button>
+            <button id="cancel-btn-1" class="btn" data-testid="cancel-button">Cancel</button>
+            <button id="next-btn" class="btn next" data-testid="next-button" onclick="window.location.href='page2.html'">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function storeFormData(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            var formData = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            var storedData = localStorage.getItem('formData');
+            var dataArray = storedData ? JSON.parse(storedData) : [];
+            dataArray.push(formData);
+            localStorage.setItem('formData', JSON.stringify(dataArray));
+
+            var output = document.getElementById('storedData');
+            output.innerHTML = '<p>Data stored: ' + JSON.stringify(dataArray) + '</p>';
+
+            document.getElementById('userDataForm').reset();
+        }
+    </script>
+</body>
+</html>
