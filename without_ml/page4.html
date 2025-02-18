@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 4 - Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    nav { margin-bottom: 20px; }
+    nav a { margin-right: 15px; padding: 10px; background-color: #eee; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <nav>
+      <a id="nav-profile" href="#profile">Profile</a>
+      <a id="nav-settings" href="#settings">Settings</a>
+      <a id="nav-logout" href="#logout">Logout</a>
+    </nav>
+    <div id="content">
+      <p>Welcome to your dashboard!</p>
+    </div>
+    <script>
+      document.getElementById('nav-logout').onclick = function(event) {
+        event.preventDefault();
+        alert('Logging out!');
+      }
+    </script>
+  </div>
+</body>
+</html>

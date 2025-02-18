@@ -1,0 +1,199 @@
+{
+    "Page_1_-_Self-Healing_Automation_Test": {
+        "Page_1_-_Self-Healing_Automation_Test_golden___inputid='name'": {
+            "tag": "input",
+            "id": "name",
+            "class": "form-input",
+            "name": "name",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "name-group",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___inputid='email'": {
+            "tag": "input",
+            "id": "email",
+            "class": "form-input",
+            "name": "email",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "email-group",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___textareaid='message'": {
+            "tag": "textarea",
+            "id": "message",
+            "class": "form-input",
+            "name": "message",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "message-group",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___formid='userDataForm'__inputtype='submit'": {
+            "tag": "input",
+            "id": "form-submit-btn-1",
+            "class": "primary",
+            "name": "",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "submit-group",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___*id='submit-btn'": {
+            "tag": "button",
+            "id": "submit-btn",
+            "class": "btn primary",
+            "name": "",
+            "data-testid": "submit-button",
+            "text": "Submit",
+            "parent": {
+                "tag": "div",
+                "id": "action-buttons",
+                "class": "button-container",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___*id='cancel-btn'": {
+            "tag": "button",
+            "id": "cancel-btn",
+            "class": "btn",
+            "name": "",
+            "data-testid": "cancel-button",
+            "text": "Cancel",
+            "parent": {
+                "tag": "div",
+                "id": "action-buttons",
+                "class": "button-container",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_1_-_Self-Healing_Automation_Test_golden___*id='next-btn'": {
+            "tag": "button",
+            "id": "next-btn",
+            "class": "btn next",
+            "name": "",
+            "data-testid": "next-button",
+            "text": "Next",
+            "parent": {
+                "tag": "div",
+                "id": "action-buttons",
+                "class": "button-container",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_4_-_Dashboard_golden___aid='nav-profile'": {
+            "tag": "a",
+            "id": "nav-profile",
+            "class": "",
+            "name": "",
+            "data-testid": null,
+            "text": "Profile",
+            "parent": {
+                "tag": "nav",
+                "id": "",
+                "class": "",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_4_-_Dashboard_golden___aid='nav-settings'": {
+            "tag": "a",
+            "id": "nav-settings",
+            "class": "",
+            "name": "",
+            "data-testid": null,
+            "text": "Settings",
+            "parent": {
+                "tag": "nav",
+                "id": "",
+                "class": "",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_4_-_Dashboard_golden___aid='nav-logout'": {
+            "tag": "a",
+            "id": "nav-logout",
+            "class": "",
+            "name": "",
+            "data-testid": null,
+            "text": "Logout",
+            "parent": {
+                "tag": "nav",
+                "id": "",
+                "class": "",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_3_-_Login_golden___inputid='login-email'": {
+            "tag": "input",
+            "id": "login-email",
+            "class": "",
+            "name": "email",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_3_-_Login_golden___inputid='login-password'": {
+            "tag": "input",
+            "id": "login-password",
+            "class": "",
+            "name": "password",
+            "data-testid": null,
+            "text": "",
+            "parent": {
+                "tag": "div",
+                "id": "",
+                "class": "form-group",
+                "name": null,
+                "data-testid": null
+            }
+        },
+        "Page_3_-_Login_golden___buttonid='login-btn'": {
+            "tag": "button",
+            "id": "login-btn",
+            "class": "",
+            "name": "",
+            "data-testid": null,
+            "text": "Login",
+            "parent": {
+                "tag": "form",
+                "id": "loginForm",
+                "class": "",
+                "name": "",
+                "data-testid": null
+            }
+        }
+    }
+}
