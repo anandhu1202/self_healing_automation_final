@@ -222,14 +222,13 @@ def self_heal_selector(driver, golden, training_data, training_labels, model):
         heuristic_scores.append(compute_similarity(golden, candidate))
     
     best_index_heuristic = int(np.argmax(heuristic_scores))
-    # Create labels: mark the best heuristic candidate as 1, rest 0
     labels = [1 if i == best_index_heuristic else 0 for i in range(len(candidates))]
     
-    # Append current examples to our training data
+    # Update our training data with the current examples
     training_data.extend(features_list)
     training_labels.extend(labels)
     
-    # If enough data, train/update the model
+    # If enough data is available, (re)train the model
     if len(training_labels) >= MIN_SAMPLES_FOR_MODEL:
         clf = XGBClassifier(n_estimators=100, random_state=42, use_label_encoder=False, eval_metric='logloss')
         clf.fit(np.array(training_data), np.array(training_labels))
@@ -239,7 +238,7 @@ def self_heal_selector(driver, golden, training_data, training_labels, model):
     else:
         print("Not enough training data for ML; using heuristic ranking.")
     
-    # Use ML model if available; otherwise, fallback to heuristic
+    # Use ML model if available; otherwise fallback on heuristic ranking
     if model is not None:
         probabilities = model.predict_proba(np.array(features_list))[:, 1]
         best_index_model = int(np.argmax(probabilities))
@@ -260,7 +259,6 @@ def self_heal_selector(driver, golden, training_data, training_labels, model):
 def get_updated_locator(driver, original_xpath, golden, training_data, training_labels, model):
     try:
         driver.find_element(By.XPATH, original_xpath)
-        # Return values consistently
         return original_xpath, None, training_data, training_labels, model
     except NoSuchElementException:
         print("Original locator failed; triggering self-healing.")
@@ -299,7 +297,8 @@ class SelfHealingAgent:
             print("Element found using original locator.")
             return element
         except NoSuchElementException:
-            result = get_updated_locator(self.driver, original_xpath, golden, self.training_data, self.training_labels, self.model)
+            result = get_updated_locator(self.driver, original_xpath, golden,
+                                         self.training_data, self.training_labels, self.model)
             new_locator, _, self.training_data, self.training_labels, self.model = result
             print(f"Agent updated locator: {new_locator}")
             return self.driver.find_element(By.XPATH, new_locator)
